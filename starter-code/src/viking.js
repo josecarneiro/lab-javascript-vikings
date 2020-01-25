@@ -46,42 +46,40 @@ class Saxon extends Soldier {
 
 // War
 class War {
-  constructor(object) {
-    addViking(object) {
+  constructor() {
+    this.vikingArmy = [];
+    this.saxonArmy = [];
+  }
 
-      this.vikingArmy.push(object);
-      this.vikingArmy = [];
-    }
+  addViking(Viking) {
+    this.vikingArmy.push(Viking);
   };
-  constructor(object) {
-    addSaxon(object) {
-      army = saxonArmy.push(object);
-      this.saxonArmy = [];
-    }
+
+  addSaxon(Saxon) {
+    this.saxonArmy.push(Saxon);
   };
 
   vikingAttack() {
-    ataque = Saxon.receiveDamage(Viking.strength);
-    if (ataque === "A Saxon has died in combat") {
-      return saxonArmy.pop()
+    saxonIndex = saxonArmy(Math.floor(Math.random() * array.length));
+
+    const attackResult = this.saxonArmy[saxonIndex].receiveDamage(this.vikingArmy[vikingIndex].attack());
+
+    if (this.saxonArmy[saxonIndex].health <= 0) {
+      this.saxonArmy.splice(saxonIndex, 1);
     }
+    return attackResult;
   };
   saxonAttack() {
-    ataque === Viking.receiveDamage(Saxon.strength);
-    if (ataque === `${name.Viking} has died in act of combat`) {
-      return vikingArmy.pop()
+    vikingIndex = vikingArmy(Math.floor(Math.random() * array.length));
+    const attackResult = this.vikingArmy[vikingIndex].receiveDamage(this.saxonArmy[saxonIndex].attack());
+
+    if (this.vikingArmy[vikingIndex].health <= 0) {
+      this.vikingArmy.splice(vikingIndex, 1);
     }
-
-  };
-  showStatus() { };
-
-};
-
-
-
-/*class Car extends Vehicle {
-  constructor (brand, engineSize, year) {
-    super(brand, year, 4);
-    this.engineSize = engineSize;
+    return attackResult;
   }
-*/
+
+  showStatus() {
+  };
+
+}
