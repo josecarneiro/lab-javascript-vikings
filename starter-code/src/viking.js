@@ -80,6 +80,15 @@ class War {
   }
 
   showStatus() {
-  };
-
+    switch (true) {
+      case this.saxonArmy.length > 0:
+        console.log('Saxons have fought for their lives and survived another day...');
+        break
+      case this.vikingArmy.length > 0:
+        console.log('Vikings have won the war of the century!');
+        break
+      default:
+        console.log('Vikings and Saxons are still in the thick of battle.');
+    }
+  }
 }
