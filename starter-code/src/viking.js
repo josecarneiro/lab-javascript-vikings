@@ -10,7 +10,7 @@ class Soldier {
   receiveDamage(damage) {
     this.health -= damage;
   }
-}
+};
 
 // Viking
 
@@ -31,7 +31,7 @@ class Viking extends Soldier {
   battleCry() {
     return 'Odin Owns You All!';
   }
-}
+};
 
 // Saxon
 class Saxon extends Soldier {
@@ -47,8 +47,11 @@ class Saxon extends Soldier {
 
 // War
 class War {
-  vikingArmy = [];
-  saxonArmy = [];
+  constructor() {
+    this.vikingArmy = [];
+    this.saxonArmy = [];
+}
+
 
   addViking(Viking) {
     this.vikingArmy.push(Viking);
@@ -98,7 +101,7 @@ class War {
       return `Vikings and Saxons are still in the thick of battle.`;
     };
 
-  }
+  } 
 
 };
 
